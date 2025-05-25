@@ -59,27 +59,41 @@
     </div>
     <div class="flex justify-center mt-8">
      <div class="bg-white rounded-lg p-4 max-w-lg">
-      <img alt="Black and white QR code on white background" class="w-30 h-30" height="140" src="https://storage.googleapis.com/a1aa/image/9deb49a6-4628-4db0-32b2-dcb59e16266a.jpg" width="140"/>
+      <img alt="Black and white QR code on white background" class="w-50 h-50" height="200" src="https://storage.googleapis.com/a1aa/image/9deb49a6-4628-4db0-32b2-dcb59e16266a.jpg" width="200"/>
      </div>
     </div>
-    <div class="text-center text-white text-[19px] mt-20 space-y-1 font-light leading-5">
-     <p>
-      LGDVHA.NY PO M Production DB Unit
-     </p>
-     <p>
-      2C1
-     </p>
-     <p>
-      Nguyen Thanh Dat Operator
-     </p>
-     <p>
-      (VH059312)
-     </p>
+    <div class="flex flex-col flex-1 justify-between">
+      <div></div>
+      <div class="text-center text-white text-[19px] space-y-1 font-light leading-5 flex flex-col justify-center flex-1 mt-[30px]">
+        <p>
+          LGDVHA.NY PO M Production DB Unit C2
+        </p>
+        <p>
+          Nguyen Thanh Dat Operator
+        </p>
+        <p>
+          (VH059312)
+        </p>
+      </div>
+      <div></div>
     </div>
    </div>
-   <div class="bg-white py-20 flex flex-col items-center space-y-6">
+   <div class="bg-white py-20 flex flex-col items-center space-y-6 h-[390px] w-full rounded-none mb-0 pb-0">
+    <div class="flex justify-center space-x-12 mb-6">
+      <div class="flex flex-col items-center">
+        <img src="camera.png" alt="Camera" class="w-16 h-16 mb-2" />
+        <span class="text-pink-500 font-mono text-base">Camera</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="bluetool.png" alt="Bluetooth" class="w-16 h-16 mb-2" />
+        <span class="text-pink-500 font-mono text-base">Bluetooth</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="micro.png" alt="Microphone" class="w-16 h-16 mb-2" />
+        <span class="text-pink-500 font-mono text-base">Microphone</span>
+      </div>
+    </div>
     <div class="flex items-center space-x-3 text-pink-500 font-mono text-lg select-none">
-     <img src="imagecopy.png" alt="Security Policy Icon" class="w-6 h-6 align-middle"/>
      <div class="text-wrapper">
        <span>Security Policy is applied</span>
      </div>
@@ -88,16 +102,26 @@
      <i class="fas fa-lock">
      </i>
      <span>
-      Cancel Policy
+      Cancel Policys
      </span>
     </button>
+   </div>
+   <div class="w-full flex items-center justify-center bg-gray-100 py-3 mt-0">
+    <div class="flex items-center w-full max-w-xs justify-between">
+      <i class="fas fa-user text-gray-500 text-2xl"></i>
+      <div class="w-px h-7 bg-gray-300 mx-6"></div>
+      <i class="fas fa-exclamation-circle text-gray-400 text-2xl"></i>
+    </div>
    </div>
   </div>
   <script>
     function updateTime() {
       const now = new Date();
-      const options = { day: '2-digit', month: 'short', year: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-      const formattedTime = now.toLocaleString('en-GB', options).replace(/,/g, ''); // Format like '24-Jul-04 11:27:01'
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = now.toLocaleString('en-GB', { month: 'short' });
+      const year = String(now.getFullYear()).slice(-2);
+      const time = now.toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+      const formattedTime = `${day}-${month}-${year} ${time}`;
       const timeElement = document.querySelector('.font-mono.tracking-widest');
       if (timeElement) {
         timeElement.textContent = formattedTime;
