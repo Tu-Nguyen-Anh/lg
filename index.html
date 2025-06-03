@@ -61,8 +61,8 @@
   </style>
  </head>
  <body class="bg-pink-500 font-sans">
-  <div class="min-h-screen flex flex-col justify-between">
-   <div>
+  <div class="min-h-screen flex flex-col">
+   <div class="flex-1">
     <header class="flex items-center justify-center relative py-4">
      <button aria-label="Back" class="absolute left-4 text-white text-xl">
       <i class="fas fa-undo">
@@ -88,9 +88,8 @@
       <img alt="Black and white QR code on white background" class="w-[200px] h-[200px]" src="Tr5z67_qrcode.png"/>
      </div>
     </div>
-    <div class="flex flex-col flex-1 justify-between">
-      <div></div>
-      <div class="text-center text-white text-[19px] space-y-1 font-light leading-5 flex flex-col justify-center flex-1 mt-[18px]">
+    <div class="flex flex-col justify-between">
+       <div class="text-center text-white text-[19px] space-y-1 font-light leading-5 flex flex-col justify-center mt-[18px]">
         <p>
           LGDVHA.NY PO M Production DB Unit C2
         </p>
@@ -101,10 +100,9 @@
           (VH059312)
         </p>
       </div>
-      <div></div>
     </div>
    </div>
-   <div class="bg-white py-16 flex flex-col items-center space-y-6 h-[330px] w-full rounded-none mb-0 pb-0">
+   <div class="bg-white py-8 flex flex-col items-center space-y-6 h-[300px] w-full rounded-none mb-0 pb-0">
     <div class="flex justify-center space-x-12 mb-6">
       <div class="flex flex-col items-center">
         <img src="camera.png" alt="Camera" class="w-14 h-14 mb-2" />
@@ -133,12 +131,12 @@
     </button>
    </div>
    <div class="w-full flex items-center justify-center bg-gray-100 py-3 mt-0">
-    <div class="flex items-center w-full px-16 justify-between">
+    <div class="flex items-center w-full px-16 Params: justify-between">
       <i class="fas fa-user text-gray-500 text-2xl"></i>
       <div class="w-px h-7 bg-gray-300"></div>
       <i class="fas fa-exclamation-circle text-gray-400 text-2xl"></i>
     </div>
-   </div>
+   </ div>
   </div>
   <script>
     function updateTime() {
@@ -148,7 +146,7 @@
       const year = String(now.getFullYear()).slice(-2);
       const time = now.toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
       const formattedTime = `${day}-${month}-${year} ${time}`;
-      const timeElement = document.querySelector('.font-mono.tracking-widest');
+      const timeElement = document.querySelector('.time-display');
       if (timeElement) {
         timeElement.textContent = formattedTime;
       }
