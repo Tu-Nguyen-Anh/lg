@@ -178,7 +178,7 @@
     <div class="flex items-center w-full px-16 Params: justify-between">
       <i class="fas fa-user text-gray-500 text-2xl"></i>
       <div class="w-px h-7 bg-gray-300"></div>
-      <i class="fas fa-exclamation-circle text-gray-400 text-2xl"></i>
+      <i id="exclamationBtn" class="fas fa-exclamation-circle text-gray-400 text-2xl cursor-pointer"></i>
     </div>
    </ div>
   </div>
@@ -206,6 +206,19 @@
 
     // Checkout button functionality
     document.getElementById('checkoutBtn').addEventListener('click', function() {
+      const overlay = document.getElementById('overlay');
+      
+      // Show overlay
+      overlay.classList.add('show');
+      
+      // Hide overlay after 5 seconds
+      setTimeout(function() {
+        overlay.classList.remove('show');
+      }, 5000);
+    });
+
+    // Exclamation circle button functionality
+    document.getElementById('exclamationBtn').addEventListener('click', function() {
       const overlay = document.getElementById('overlay');
       
       // Show overlay
